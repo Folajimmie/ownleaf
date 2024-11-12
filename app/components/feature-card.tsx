@@ -29,7 +29,7 @@ export const FeatureCard = ({
 }: FeatureCardProps) => {
   return (
     <section>
-      <h3 className="subheading pb-[19px]">{title}</h3>
+      <h3 className="subheading pb-[19px] font-inter">{title}</h3>
       <p className="base pb-[26px]">{description}</p>
 
       <div className="cursor-pointer hover:border hover:border-selectBlue hover:rounded-md">
@@ -40,7 +40,7 @@ export const FeatureCard = ({
           <p className="text-base">{heading}</p>
           <div className="flex space-x-2 px-[16px] py-[10px] rounded-md border">
             {Icon && Icon}
-            <p className="text-subHeading">{buttonText}</p>
+            <p className="text-buttonText font-inter">{buttonText}</p>
           </div>
         </div>
       </div>

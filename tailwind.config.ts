@@ -21,6 +21,7 @@ export default {
       },
       fontFamily: {
         optima: ["var(--font-optima)"],
+        inter: ["Inter", "sans-serif"],
       },
       fontSize: {
         subHeading: [
@@ -31,7 +32,7 @@ export default {
           },
         ],
         base: [
-          "24px",
+          "20px",
           {
             fontWeight: 400,
             lineHeight: "29.09px",
@@ -42,6 +43,13 @@ export default {
           {
             fontWeight: 500,
             lineHeight: "16.94px",
+          },
+        ],
+        buttonText: [
+          "16px",
+          {
+            fontWeight: 400,
+            lineHeight: "19.36px",
           },
         ],
       },

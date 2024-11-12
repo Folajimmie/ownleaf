@@ -9,17 +9,18 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  const pathname = usePathname();
+
+  const toggleSidebar = () => setIsOpen((prev) => !prev);
   const closeSidebar = () => setIsOpen(false);
 
-  const pathname = usePathname();
   const isActive = (path: string) => path === pathname;
 
-  const linkItemStyles = (isActive: boolean) => ({
-    icon: isActive
+  const linkItemStyles = (active: boolean) => ({
+    icon: active
       ? "bg-primary text-white"
       : "text-midGrey group-hover:bg-primary group-hover:text-white",
-    name: isActive ? "text-primary" : "group-hover:text-primary",
+    name: active ? "text-primary" : "group-hover:text-primary",
   });
 
   return (
@@ -42,52 +43,41 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`lg:fixed lg:left-0 lg:top-0 lg:h-screen bg-secondary lg:bg-secondary lg:py-6 lg:px-4 z-40 ${
-          isOpen
-            ? "fixed left-0 top-16 h-screen w-[123px] bg-secondary z-50"
-            : "hidden"
+        className={`lg:fixed lg:left-0 lg:top-0 lg:h-screen bg-secondary lg:py-6 lg:px-4 z-40 ${
+          isOpen ? "w-[123px] top-16 z-50" : "hidden"
         } lg:block`}
       >
-        <div
-          className={`flex flex-col items-center space-y-4 ${
-            isOpen ? "block" : "hidden"
-          } lg:flex lg:space-y-4`}
-        >
-          <div className="lg:w-full lg:flex lg:justify-center cursor-pointer hidden">
-            <Link href="/">
-              <Image
-                src="/ownleaf-logo.png"
-                height={100}
-                width={100}
-                alt="logo"
-              />
-            </Link>
-          </div>
+        <div className="flex flex-col items-center space-y-5">
+          {sidebarItems.map(({ icon, name, path }) => {
+            const { icon: iconStyles, name: nameStyles } = linkItemStyles(
+              isActive(path)
+            );
 
-          <div className="flex flex-col items-center space-y-3">
-            {sidebarItems.map((item) => {
-              const { icon, name, path } = item;
-              const { icon: iconStyles, name: nameStyles } = linkItemStyles(
-                isActive(path)
-              );
-
-              return (
-                <Link href={path} key={path}>
-                  <div
-                    onClick={closeSidebar}
-                    className="flex flex-col items-center text-midGrey group w-full"
+            return (
+              <Link href={path} key={path}>
+                <div
+                  onClick={closeSidebar}
+                  className="flex flex-col items-center text-midGrey group w-full"
+                >
+                  <span
+                    className={`flex items-center justify-center p-3 ${
+                      path === "/profile"
+                        ? isActive(path)
+                          ? "bg-primary text-white rounded-full mb-2"
+                          : "bg-[#efc016] group-hover:bg-primary group-hover:text-white rounded-full mb-2"
+                        : `${iconStyles} rounded-md`
+                    }`}
                   >
-                    <span
-                      className={`flex items-center justify-center p-3 rounded-md ${iconStyles}`}
-                    >
-                      {icon}
-                    </span>
-                    <span className={`text-center text-menu ${nameStyles}`}>{name}</span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+                    {icon}
+                  </span>
+
+                  <span className={`text-center text-menu ${nameStyles}`}>
+                    {name}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </aside>
 

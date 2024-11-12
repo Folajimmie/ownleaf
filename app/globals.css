@@ -11,7 +11,7 @@
   @apply text-base text-midGrey;
 }
 .subheading {
-  @apply text-subHeading text-darkGrey;
+  @apply text-subHeading text-darkGrey
 }
 
 /* Active sidebar */

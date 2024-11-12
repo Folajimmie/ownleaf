@@ -44,9 +44,23 @@ export default function Sidebar() {
       {/* Sidebar */}
       <aside
         className={`lg:fixed lg:left-0 lg:top-0 lg:h-screen bg-secondary lg:py-6 lg:px-4 z-40 ${
-          isOpen ? "w-[123px] top-16 z-50" : "hidden"
-        } lg:block`}
+          isOpen
+            ? "fixed top-16 left-0 w-[123px] h-full z-50 pt-3.5"
+            : "hidden lg:block"
+        }`}
       >
+        <div className="hidden lg:block mb-[28px]">
+          <Link href="/">
+            <Image
+              src="/ownleaf-logo.png"
+              width={100}
+              height={100}
+              alt="logo"
+            />
+          </Link>
+        </div>
+
+        {/* Sidebar Items */}
         <div className="flex flex-col items-center space-y-5">
           {sidebarItems.map(({ icon, name, path }) => {
             const { icon: iconStyles, name: nameStyles } = linkItemStyles(
@@ -70,7 +84,6 @@ export default function Sidebar() {
                   >
                     {icon}
                   </span>
-
                   <span className={`text-center text-menu ${nameStyles}`}>
                     {name}
                   </span>

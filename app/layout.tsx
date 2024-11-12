@@ -39,7 +39,7 @@ export default function RootLayout({
 
         <Bell
           size={40}
-          className="hidden lg:block absolute top-[32px] right-[34px] p-2 bg-gray-100 rounded-full text-gray-400 cursor-pointer"
+          className="hidden lg:block absolute top-[29px] right-[34px] p-2 bg-gray-100 rounded-full text-gray-400 cursor-pointer"
         />
       </body>
     </html>

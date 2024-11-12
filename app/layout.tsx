@@ -6,8 +6,8 @@ import { Bell } from "lucide-react";
 
 
 const optima = localFont({
-  src: "./fonts/optima.ttf",
-  variable: "--font-geist-mono",
+  src: "./fonts/OPTIMA.woff",
+  variable: "--font-optima",
   weight: "100 900",
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${optima.variable} antialiased flex items-start justify-between relative`}
+        className={`${optima.variable} flex items-start justify-between relative`}
       >
         <Sidebar />
         <main className="flex-1">{children}</main>

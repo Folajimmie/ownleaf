@@ -5,7 +5,7 @@ import { FeatureCard, FeatureCardTwo } from "./components/feature-card";
 
 export default function Home() {
   return (
-    <div className="page-container">
+    <div className="page-container font-optima">
       <h2 className="text-base text-midGrey">
         Hi Yumi, <br /> Welcome to Ownleaf for Bethnal Green Ventures
       </h2>

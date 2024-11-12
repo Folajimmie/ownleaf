@@ -19,29 +19,32 @@ export default {
         darkGrey: "#434343",
         borderGrey: "#C4C4C4",
       },
+      fontFamily: {
+        optima: ["var(--font-optima)"],
+      },
       fontSize: {
-        'subHeading': [
-          '16px',
+        subHeading: [
+          "16px",
           {
             fontWeight: 600,
-            lineHeight: '19.36px',
-          }
+            lineHeight: "19.36px",
+          },
         ],
-        'base': [
-          '24px',
+        base: [
+          "24px",
           {
             fontWeight: 400,
-            lineHeight: '29.09px',
-          }
+            lineHeight: "29.09px",
+          },
         ],
-        'menu': [
-          '14px',
+        menu: [
+          "14px",
           {
             fontWeight: 500,
-            lineHeight: '16.94px',
-          }
+            lineHeight: "16.94px",
+          },
         ],
-      }
+      },
     },
   },
   plugins: [],

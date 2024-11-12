@@ -2,20 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.page-container {
+  @apply w-full md:w-[345px] px-4 md:mx-auto pt-[79px] pb-6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* General Typography */
+.base {
+  @apply text-base text-midGrey;
+}
+.subheading {
+  @apply text-subHeading text-darkGrey;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Active sidebar */
+.active {
+  @apply text-white bg-primary;
 }

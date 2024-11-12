@@ -1,4 +1,3 @@
-import { BookOpen, Headset, House, Settings, UserPen } from "lucide-react";
 import Icon from "./Icon";
 
 export const sidebarItems = [

@@ -1,6 +1,5 @@
 import Separator from "@/components/separator";
 import { Pencil } from "lucide-react";
-import Image from "next/image";
 import { FeatureCard, FeatureCardTwo } from "./components/feature-card";
 
 export default function Home() {

@@ -5,7 +5,7 @@ import { FeatureCard, FeatureCardTwo } from "./components/feature-card";
 export default function Home() {
   return (
     <div className="page-container font-optima">
-      <h2 className="md:w-[280px] text-base text-midGrey">
+      <h2 className="md:w-[280px] base">
         Hi Yumi, <br /> Welcome to Ownleaf for Bethnal Green Ventures
       </h2>
       <Separator className="mt-[26px] mb-[33px]" />
@@ -16,7 +16,7 @@ export default function Home() {
           description="Set a policy, view examples and share drafts"
           imageSrc="/fancy-plant.png"
           buttonText="Create New Policy"
-          heading="Bereavement Policy"
+          heading="Your Bereavement Policy"
           className="bg-banner"
           Icon={<Pencil size={16} />}
         />
@@ -32,6 +32,7 @@ export default function Home() {
           className="border border-borderGrey"
           heading="24/7 Support"
           buttonText="Get immediate Help"
+          isGrayscale={true}
         />
       </section>
 

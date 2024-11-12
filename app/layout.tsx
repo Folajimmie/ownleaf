@@ -7,7 +7,7 @@ import { Bell } from "lucide-react";
 const optima = localFont({
   src: "./fonts/OPTIMA.woff",
   variable: "--font-optima",
-  weight: "100 900",
+  // weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({ subsets: ["latin"] });

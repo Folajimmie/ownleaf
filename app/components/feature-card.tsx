@@ -9,6 +9,7 @@ interface FeatureCardProps {
   buttonText: string;
   className?: string;
   Icon?: React.ReactNode;
+  isGrayscale?: boolean;
 }
 
 interface FeatureCardTwoProps {
@@ -26,6 +27,7 @@ export const FeatureCard = ({
   buttonText,
   className = "",
   Icon,
+  isGrayscale = false, // Default to false
 }: FeatureCardProps) => {
   return (
     <section>
@@ -33,12 +35,18 @@ export const FeatureCard = ({
       <p className="base pb-[26px]">{description}</p>
 
       <div className="cursor-pointer hover:border hover:border-selectBlue hover:rounded-md">
-        <div className={`flex justify-center rounded-t-md py-4 ${className}`}>
-          <Image src={imageSrc} width={160} height={160} alt={title} />
+        <div className={`flex justify-center rounded-t-md py-5 ${className}`}>
+          <Image
+            src={imageSrc}
+            width={190}
+            height={190}
+            alt={title}
+            className={isGrayscale ? "filter grayscale" : ""}
+          />
         </div>
         <div className="bg-primary hover:bg-selectBlue flex flex-col justify-center items-center space-y-[24px] px-[23px] py-[22px] text-white rounded-b-md">
-          <p className="text-base">{heading}</p>
-          <div className="flex space-x-2 px-[16px] py-[10px] rounded-md border">
+          <p className="text-base font-normal">{heading}</p>
+          <div className="flex space-x-2 px-[16px] py-[10px] rounded-lg border">
             {Icon && Icon}
             <p className="text-buttonText font-inter">{buttonText}</p>
           </div>
@@ -47,6 +55,7 @@ export const FeatureCard = ({
     </section>
   );
 };
+
 
 export const FeatureCardTwo = ({
   imageSrc,
@@ -63,7 +72,7 @@ export const FeatureCardTwo = ({
         height={160}
         className="w-full rounded-md h-auto"
       />
-          <h2 className="base mt-4 hover:underline
+          <h2 className="base mt-3 hover:underline
        cursor-pointer">{title}</h2>
     </div>
   );

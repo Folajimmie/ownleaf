@@ -34,7 +34,7 @@ export default function Sidebar() {
           <Menu size={16} />
         </button>
         <Link href="/" className="flex-shrink-0">
-          <Image src="/ownleaf-logo.png" height={60} width={60} alt="logo" />
+          <Image src="/ownleaf-logo.png" height={31} width={83} alt="logo" />
         </Link>
         <button className="p-2 bg-gray-100 rounded-full text-gray-400">
           <Bell size={16} />
@@ -53,8 +53,8 @@ export default function Sidebar() {
           <Link href="/">
             <Image
               src="/ownleaf-logo.png"
-              width={100}
-              height={100}
+              width={90}
+              height={90}
               alt="logo"
             />
           </Link>
@@ -74,7 +74,7 @@ export default function Sidebar() {
                   className="flex flex-col items-center text-midGrey group w-full"
                 >
                   <span
-                    className={`flex items-center justify-center p-3 ${
+                    className={`flex items-center justify-center p-[10px] mb-3 ${
                       path === "/profile"
                         ? isActive(path)
                           ? "bg-primary text-white rounded-full mb-2"

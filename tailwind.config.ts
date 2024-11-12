@@ -27,14 +27,14 @@ export default {
         subHeading: [
           "16px",
           {
-            fontWeight: 600,
+            fontWeight: 500,
             lineHeight: "19.36px",
           },
         ],
         base: [
-          "20px",
+          "24px",
           {
-            fontWeight: 400,
+            fontWeight: 100,
             lineHeight: "29.09px",
           },
         ],
@@ -48,7 +48,7 @@ export default {
         buttonText: [
           "16px",
           {
-            fontWeight: 400,
+            fontWeight: 200,
             lineHeight: "19.36px",
           },
         ],

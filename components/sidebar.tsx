@@ -71,10 +71,10 @@ export default function Sidebar() {
               <Link href={path} key={path}>
                 <div
                   onClick={closeSidebar}
-                  className="flex flex-col items-center text-midGrey group w-full"
+                  className="flex flex-col items-center space-y-2 text-midGrey group w-full"
                 >
                   <span
-                    className={`flex items-center justify-center p-[10px] mb-3 ${
+                    className={`flex items-center justify-center p-[10px] ${
                       path === "/profile"
                         ? isActive(path)
                           ? "bg-primary text-white rounded-full mb-2"

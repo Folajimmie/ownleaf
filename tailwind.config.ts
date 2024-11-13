@@ -18,6 +18,7 @@ export default {
         midGrey: "#6D7074",
         darkGrey: "#434343",
         borderGrey: "#C4C4C4",
+        hoverbg: "#DFECF9",
       },
       fontFamily: {
         optima: ["var(--font-optima)"],
